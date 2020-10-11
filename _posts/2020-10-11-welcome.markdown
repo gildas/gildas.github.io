@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Welcome to my blog!"
+date:   2020-10-11 11:12:32 +0900
+tags: jekyll welcome
+---
+## Welcome to my blog!
+
+Finally, after so many years, I have decided to take _the_ dive, I am writing my blog.
+
+At first, I will blog about technical stuff that I have been gathering for years of programming in so many languages I have lost the count.
+
+As I am a beginner with [Jekyll][jekyll], the excellent blog generator, you can expect the layout to evolve at least in the first few weeks or months as I (hopefully) become less clumsy with it.
+
+
+## Resources
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[Jekyll]:      https://jekyllrb.com
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
