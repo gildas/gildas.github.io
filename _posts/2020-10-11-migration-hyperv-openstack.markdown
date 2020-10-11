@@ -5,7 +5,7 @@ author: Gildas Cherruel
 date:   2020-10-11 15:30:00 +0900
 tags: hyperv openstack kvm libvirt migration
 ---
-The other day I had to migrate Hyper-V Windows virtual machines to our OpenStack kvm/libvirt-based environment.
+The other day I had to migrate Hyper-V Windows virtual machines to our [OpenStack](https://www.openstack.org) kvm/libvirt-based environment.
 
 While I was able to find some information on the web, I could not find a definitive step-by-step guide.
 
@@ -13,7 +13,7 @@ The main difficulty with Windows Virtual Machine is their lack of [virtio](https
 
 ## Preparation
 
-You will need a host running [libvirt](https://libvirt.org). Nowadays, libvirt runs on Linux primarily, but it can also run on [https://qemu.org/download/#macos](MacOS) and [https://qemu/download/#windows](Windows), although things get usually more complicated.
+You will need a host running [libvirt](https://libvirt.org). Nowadays, libvirt runs on Linux primarily, but it can also run on [MacOS](https://qemu.org/download/#macos) and [Windows](https://qemu/download/#windows), although things get usually more complicated.
 
 On Ubuntu, installing libvirt can be done like this (don't forget `ovmf` for UEFI-based virtual machines):
 {% highlight sh %}
@@ -29,7 +29,7 @@ sudo yum install \
   virt-install virt-viewer bridge-utils edk2-ovmf
 {% endhighlight %}
 
-In order to load virtual machines to [https://www.openstack.org](OpenStack) you will also need the [https://docs.openstack.org/python-openstackclient/latest](OpenStack Client) for your platform. Oh, and, of course an Openstack cluster...
+In order to load virtual machines to OpenStack you will also need the [OpenStack Client](https://docs.openstack.org/python-openstackclient/latest) for your platform. Oh, and, of course an Openstack cluster...
 
 On Ubuntu:
 {% highlight sh %}
