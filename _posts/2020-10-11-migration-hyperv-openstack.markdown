@@ -5,15 +5,15 @@ author: Gildas Cherruel
 date:   2020-10-11 15:30:00 +0900
 tags: hyperv openstack kvm libvirt migration
 ---
-The other day I had to migrate Hyper-V Windows virtual machines to our [OpenStack](https://www.openstack.org) kvm/libvirt-based environment.
+The other day I had to migrate Hyper-V Windows virtual machines to our [OpenStack][openstack] kvm/libvirt-based environment.
 
 While I was able to find some information on the web, I could not find a definitive step-by-step guide.
 
-The main difficulty with Windows Virtual Machine is their lack of [virtio](https://wiki.libvirt.org/page/Virtio) drivers, unlike Linus Virtual Machines. These drivers are essential if you want your Virtual Machines to be fast with libvirt.
+The main difficulty with Windows Virtual Machine is their lack of [virtio][virtio] drivers, unlike Linus Virtual Machines. These drivers are essential if you want your Virtual Machines to be fast with libvirt.
 
 ## Preparation
 
-You will need a host running [libvirt](https://libvirt.org). Nowadays, libvirt runs on Linux primarily, but it can also run on [MacOS](https://qemu.org/download/#macos) and [Windows](https://qemu/download/#windows), although things get usually more complicated.
+You will need a host running [libvirt][libvirt]. Nowadays, libvirt runs on Linux primarily, but it can also run on [MacOS][qemu-macos] and [Windows][qemu-windows], although things get usually more complicated.
 
 On Ubuntu, installing libvirt can be done like this (don't forget `ovmf` for UEFI-based virtual machines):
 {% highlight sh %}
@@ -29,7 +29,7 @@ sudo yum install \
   virt-install virt-viewer bridge-utils edk2-ovmf
 {% endhighlight %}
 
-In order to load virtual machines to OpenStack you will also need the [OpenStack Client](https://docs.openstack.org/python-openstackclient/latest) for your platform. Oh, and, of course an Openstack cluster...
+In order to load virtual machines to OpenStack you will also need the [OpenStack Client][openstack-openstackclient] for your platform. Oh, and, of course an Openstack cluster...
 
 On Ubuntu:
 {% highlight sh %}
@@ -203,3 +203,9 @@ sudo python -m compileall driver.py
 sudo systemctl restart nova-compute.service
 {% endhighlight %}
 
+[libvirt]:          https://libvirt.org
+[openstack]:        https://www.openstack.org
+[openstack-client]: https://docs.openstack.org/python-openstackclient/latest
+[qemu-macos]:       https://qemu.org/download/#macos
+[qemu-windows]:     https://qemu/download/#windows
+[virtio]:           https://wiki.libvirt.org/page/Virtio
