@@ -29,7 +29,7 @@ sudo yum install \
   virt-install virt-viewer bridge-utils edk2-ovmf
 {% endhighlight %}
 
-In order to load virtual machines to OpenStack you will also need the [OpenStack Client][openstack-openstackclient] for your platform. Oh, and, of course an Openstack cluster...
+In order to load virtual machines to OpenStack you will also need the [OpenStack Client][openstack-client] for your platform. Oh, and, of course an Openstack cluster...
 
 On Ubuntu:
 {% highlight sh %}
