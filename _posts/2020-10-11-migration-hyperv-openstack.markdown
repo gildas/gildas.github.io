@@ -9,7 +9,7 @@ The other day I had to migrate Hyper-V Windows virtual machines to our [OpenStac
 
 While I was able to find some information on the web, I could not find a definitive step-by-step guide.
 
-The main difficulty with Windows Virtual Machine is their lack of [virtio][virtio] drivers, unlike Linus Virtual Machines. These drivers are essential if you want your Virtual Machines to be fast with libvirt.
+The main difficulty with Windows Virtual Machine is their lack of [virtio][virtio] drivers, unlike Linux Virtual Machines. These drivers are essential if you want your Virtual Machines to be fast with libvirt.
 
 ## Preparation
 
