@@ -144,7 +144,7 @@ Then, create an OpenStack volume from that image:
 {% highlight sh %}
 openstack volume create \
   --image myvm-disk \
-  --size 60G \
+  --size 60 \
   myvm-disk
 {% endhighlight %}
 
