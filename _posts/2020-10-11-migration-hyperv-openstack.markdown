@@ -94,7 +94,7 @@ virt-install --connect qemu:///system \
   --name myvm
 {% endhighlight %}
 
-Once the virtual machine has booted, log in (with virt-viewer, for instance) and install the drivers via PowerShell (this rungs inside the virtual machine!):
+Once the virtual machine has booted, log in (with virt-viewer, for instance) and install the drivers via PowerShell (this runs inside the virtual machine!):
 {% highlight posh %}
 cd d:\balloon\2k12R2\amd64
 pnputil -i -a *.inf
