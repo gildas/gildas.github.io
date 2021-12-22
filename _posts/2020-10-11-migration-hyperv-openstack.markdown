@@ -245,7 +245,7 @@ Here is the patch to apply in `/usr/lib/python3/dist-packages/nova/virt/libvirt`
 
 You apply it like this:
 {% highlight sh %}
-cd /usr/lib/python2.7/dist-packages/nova/virt/libvirt
+cd /usr/lib/python3/dist-packages/nova/virt/libvirt
 sudo patch driver.py < driver.py.patch
 sudo python -m compileall driver.py
 sudo systemctl restart nova-compute.service
