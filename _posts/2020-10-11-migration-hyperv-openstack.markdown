@@ -56,7 +56,7 @@ qemu-img check -r all system-disk.vhdx
 qemu-img convert -O qcow2 system-disk.vhdx system-disk.qcow2
 {% endhighlight %}
 
-Once, this is done, we need to inject the virtio drivers in the virtual disk. The trick will be to attach another dummy virtual disk to the Windows Virtual Machine so the system can install the driver.
+Once this is done, we need to inject the virtio drivers in the virtual disk. The trick will be to attach another dummy virtual disk to the Windows Virtual Machine so the system can install the driver.
 
 First, create a dummy disk:
 {% highlight sh %}
@@ -155,18 +155,21 @@ Once the volume is create and is in the `available` state, create the final virt
 openstack server create
   --volume myvm-disk \
   --flavor w1.small \
+  --key-name yyy \
   --security-group xxx \
   myvm
 {% endhighlight %}
 
 **Notes:**
 - Replace the security group `xxx` with the appropriate value for your OpenStack.
+- Replace the key name `yyy` with the appropriate key name.
 - If the virtual disk is an UEFI image, add the following property: `hw_firmware_type=uefi`:
 {% highlight sh %}
 openstack server create
   --volume myvm-disk \
   --flavor w1.small \
   --security-group xxx \
+  --key-name yyy \
   --property hw_firmware_type=uefi \
   myvm
 {% endhighlight %}
@@ -177,22 +180,67 @@ Unfortunately, the OpenStack compute server (`nova`) reads the UEFI settings onl
 
 There might be ways to read the image from the volume, but I have not found it in nova's source code.
 
-The best was to patch the source code to read the firmware type from the instance metadata.
+The best was to patch the source code to read the firmware type from the instance metadata. With the virtual machines I was moving, I also had to remove the secure boot UEFI as it wouldn't boot (without configuring it, of course).
 
-Here is the patch to apply in `/usr/lib/python2.7/dist-packages/nova/virt/libvirt`:
+Here is the patch to apply in `/usr/lib/python3/dist-packages/nova/virt/libvirt` for OpenStack Victoria:
 
 {% highlight diff %}
---- driver.py     2020-10-08 19:45:10.847239335 +0900
-+++ driver.py.new 2020-10-08 19:45:18.935288598 +0900
-@@ -4895,6 +4895,8 @@
-                 guest.sysinfo = self._get_guest_config_sysinfo(instance)
-                 guest.os_smbios = vconfig.LibvirtConfigGuestSMBIOS()
-             hw_firmware_type = image_meta.properties.get('hw_firmware_type')
-+            if not hw_firmware_type:
-+                hw_firmware_type = instance.get('metadata').get('hw_firmware_type')
-             if caps.host.cpu.arch == fields.Architecture.AARCH64:
-                 if not hw_firmware_type:
-                     hw_firmware_type = fields.FirmwareType.UEFI
+*** driver.py.orig      2021-04-12 21:14:07.000000000 +0900
+--- driver.py   2021-12-22 12:39:12.982084556 +0900
+***************
+*** 137,143 ****
+
+  DEFAULT_UEFI_LOADER_PATH = {
+      "x86_64": ['/usr/share/OVMF/OVMF_CODE.fd',
+-                '/usr/share/OVMF/OVMF_CODE.secboot.fd',
+                 '/usr/share/qemu/ovmf-x86_64-code.bin'],
+      "aarch64": ['/usr/share/AAVMF/AAVMF_CODE.fd',
+                  '/usr/share/qemu/aavmf-aarch64-code.bin']
+--- 137,142 ----
+***************
+*** 1331,1336 ****
+--- 1330,1337 ----
+              try:
+                  hw_firmware_type = instance.image_meta.properties.get(
+                      'hw_firmware_type')
++                 if not hw_firmware_type:
++                     hw_firmware_type = instance.get('metadata').get('hw_firmware_type')
+                  support_uefi = self._check_uefi_support(hw_firmware_type)
+                  guest.delete_configuration(support_uefi)
+              except libvirt.libvirtError as e:
+***************
+*** 2010,2015 ****
+--- 2011,2018 ----
+
+          hw_firmware_type = instance.image_meta.properties.get(
+              'hw_firmware_type')
++         if not hw_firmware_type:
++             hw_firmware_type = instance.get('metadata').get('hw_firmware_type')
+
+          try:
+              self._swap_volume(guest, disk_dev, conf,
+***************
+*** 2688,2693 ****
+--- 2691,2698 ----
+              if guest.has_persistent_configuration():
+                  hw_firmware_type = image_meta.properties.get(
+                      'hw_firmware_type')
++                 if not hw_firmware_type:
++                     hw_firmware_type = instance.get('metadata').get('hw_firmware_type')
+                  support_uefi = self._check_uefi_support(hw_firmware_type)
+                  guest.delete_configuration(support_uefi)
+
+***************
+*** 5637,5642 ****
+--- 5642,5649 ----
+                  guest.sysinfo = self._get_guest_config_sysinfo(instance)
+                  guest.os_smbios = vconfig.LibvirtConfigGuestSMBIOS()
+              hw_firmware_type = image_meta.properties.get('hw_firmware_type')
++             if not hw_firmware_type:
++                 hw_firmware_type = instance.get('metadata').get('hw_firmware_type')
+              if caps.host.cpu.arch == fields.Architecture.AARCH64:
+                  if not hw_firmware_type:
+                      hw_firmware_type = fields.FirmwareType.UEFI
 {% endhighlight %}
 
 You apply it like this:
