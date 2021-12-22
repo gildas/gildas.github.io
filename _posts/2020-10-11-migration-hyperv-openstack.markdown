@@ -243,7 +243,7 @@ Here is the patch to apply in `/usr/lib/python3/dist-packages/nova/virt/libvirt`
                       hw_firmware_type = fields.FirmwareType.UEFI
 {% endhighlight %}
 
-You apply it like this:
+You apply the patch like this:
 {% highlight sh %}
 cd /usr/lib/python3/dist-packages/nova/virt/libvirt
 sudo patch driver.py < driver.py.patch
