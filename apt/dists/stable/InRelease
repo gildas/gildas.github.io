@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: gildas
+Label: gildas
+Suite: stable
+Codename: stable
+Date: Fri, 07 Aug 2026 15:11:31 UTC
+Architectures: amd64 arm64
+Components: main
+Description: gildas APT repository
+MD5Sum:
+ e2030674a0a5770e023274872e5c8910 1310 main/binary-amd64/Packages
+ c1928fb68edae5b9229e05817d221ca3 683 main/binary-amd64/Packages.gz
+ b61be22c65cb11afbe3b6d52918d7118 116 main/binary-amd64/Release
+ 894f43d12535afa47e5d64b6597ceaec 1310 main/binary-arm64/Packages
+ 959a21cfccf23e7ffa9af0087812fc75 682 main/binary-arm64/Packages.gz
+ c7a43e459b4b379323777d1fb3bd8a75 116 main/binary-arm64/Release
+SHA1:
+ f36f7f6719c7207e83e8af72c596d4d3a8256e47 1310 main/binary-amd64/Packages
+ a6cb63a574814829a76924164ba9d200055f4720 683 main/binary-amd64/Packages.gz
+ 79d9a55166248f783c75e0910053386dd428845c 116 main/binary-amd64/Release
+ f28ace1ebebb6e47520bd693275a3c60247f2647 1310 main/binary-arm64/Packages
+ b3880d6c8961e812841f56ee1853f956e20d5d12 682 main/binary-arm64/Packages.gz
+ 00990662c14b1c733eb39a60094ffccddaaf864e 116 main/binary-arm64/Release
+SHA256:
+ 85f9ea8c2b236d3fc131ce0eb3ff9261f6d63121853bca39d4049c1cee3864b2 1310 main/binary-amd64/Packages
+ b5fe8fce8fe30ca29c079434517e0d17c41d0dc436ab5d2d1732ceeb00f5ae7c 683 main/binary-amd64/Packages.gz
+ 1d38cfc6b4f0ac4013fc008ddc3c7de2e1cbeec1dcb78ce86a91a60b0f559d35 116 main/binary-amd64/Release
+ a45f0e1e260aa62a814718da93e12ad99f20bb3bb1e9abca8d6ce8714e9ac4d4 1310 main/binary-arm64/Packages
+ c1d95edc4edc165a1934f04b3aafe1eb30d9f4a2964b7682fc659f1ac4d94cf6 682 main/binary-arm64/Packages.gz
+ 8c257cbeb76d83e47eae8053c31f9e67e4ae5667ae6a786af4524b015f92a0b0 116 main/binary-arm64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQP29GNkRRfX7IUJjAAqdyOXpp+AAUCanX1owAKCRAAqdyOXpp+
+AOS8AP9V7efvowQ7mOgxi+SPa/ubUkqOMFnHrWWTpluzjKZpjQEAn0jsO6UV1vPJ
+KR+3IoBGkXmoPcMwV8gQZpOaEPVapgw=
+=S1Qn
+-----END PGP SIGNATURE-----

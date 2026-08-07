@@ -1,0 +1,37 @@
+Package: bitbucket-cli
+Version: 0.18.4-1
+Architecture: amd64
+License: MIT
+Maintainer: Gildas Cherruel <gildas@breizh.org>
+Installed-Size: 37212
+Replaces: bitbucket-cli
+Provides: bitbucket-cli
+Homepage: https://github.com/gildas/bitbucket-cli
+Priority: extra
+Section: default
+Filename: pool/main/b/bitbucket-cli/bitbucket-cli_0.18.4-1_amd64.deb
+Size: 18746716
+SHA256: 375e6a1fb5af143e49e3e8af80162ca95ab0dd02efcad8e704e674c6a4097e52
+SHA1: bf16554b785950433576069e203e1163f33f7c0f
+MD5sum: dc184a24c34b934df6d32f91c59dae2a
+Description: The Bitbucket Command Line Interface brings the power of the Bitbucket
+ platform to your command line. Creating and merging Pull Requests, cloning
+ repositories, and more are now just a few keystrokes away.
+
+Package: bunyan-logviewer
+Version: 0.4.0-1
+Architecture: amd64
+Maintainer: Gildas Cherruel <gildas@breizh.org>
+Installed-Size: 26428
+Replaces: bunyan-logviewer
+Provides: bunyan-logviewer
+Homepage: https://github.com/gildas/lv
+Priority: extra
+Section: default
+Filename: pool/main/b/bunyan-logviewer/bunyan-logviewer_0.4.0-1_amd64.deb
+Size: 13530910
+SHA256: 42fa2ad5bcfebca1ab87e380f1d83feb4616237d532bce14fafd81a9f70e4fc7
+SHA1: 3d0d24d0384ed0ee9caf8f575e7fb7d7c533020a
+MD5sum: d42c8e30ffc78ee03993c3e2694b7786
+Description: lv is a logviewer for bunyan and pino logger.
+

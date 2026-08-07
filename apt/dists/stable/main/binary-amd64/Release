@@ -1,0 +1,6 @@
+Archive: stable
+Component: main
+Origin: gildas
+Label: gildas
+Architecture: amd64
+Description: gildas APT repository
