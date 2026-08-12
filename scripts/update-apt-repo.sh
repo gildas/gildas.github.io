@@ -4,7 +4,7 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/apt"
 workspace="$(mktemp -d)"
 download_dir="$workspace/downloads"
-#trap 'rm -rf "$workspace"' EXIT
+trap 'rm -rf "$workspace"' EXIT
 
 required_commands=(curl jq gpg reprepro dpkg-deb gh)
 for command in "${required_commands[@]}"; do
@@ -77,8 +77,6 @@ for repository in ${REPOSITORIES[@]}; do
       imported=$((imported + 1))
     done
 done
-
-echo "Do not forget to delete the workspace from $workspace"
 
 if (( imported == 0 )); then
   echo "No package was newly imported"
