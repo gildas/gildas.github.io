@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Environment:
+#  GITHUB_TOKEN:    Used by gh to interact with Github
+#  GPG_KEY_ID:      Used to sign the repository
+#  GPG_PRIVATE_KEY: Used to sign packages
+
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/apt"
@@ -16,8 +21,8 @@ done
 
 echo "Building APT repository from releases" 
 REPOSITORIES=(
-  $(echo '{"name":"Logviewer","slug":"gildas/lv","package":"bunyan-logviewer"}' | jq -r --compact-output '. | @base64')
   $(echo '{"name":"Bitbucket CLI","slug":"gildas/bitbucket-cli","package":"bitbucket-cli"}' | jq -r --compact-output '. | @base64')
+  $(echo '{"name":"Logviewer","slug":"gildas/lv","package":"bunyan-logviewer"}' | jq -r --compact-output '. | @base64')
 )
 
 echo "Repositories to process: ${#REPOSITORIES[@]}"
@@ -59,23 +64,23 @@ for repository in ${REPOSITORIES[@]}; do
   repository_slug=$(get_field $repository .slug)
   package_name=$(get_field "$repository" '.package')
   echo "  Package name: $package_name"
-  echo "    Importing package URLs for $repository_name"
-  gh api -H "Accept: application/vnd.github+json" "/repos/$repository_slug/releases/latest" | \
-    jq -r '.assets[] | select(.name | endswith(".deb")) | .browser_download_url' | \
-    while read -r url; do
+  while read -r url; do
       repository_path="$repo_root/pool/main/b/${package_name}/$(basename $url)"
       asset_path="$download_dir/$(basename $url)"
       if [[ -f $repository_path ]]; then
-        echo "    Package is alredy up-to-date in the repository"
+        echo "  Package is alredy up-to-date in the repository"
         cp "$repository_path" "$asset_path"
+        echo "  Copied $repository_path to $asset_path"
       else
-        echo "    Downloading $url"
+        echo "  Downloading $url"
         curl -sSL "$url" -o "$asset_path"
+        echo "  Downloaded $url to $asset_path"
       fi
       #reprepro --basedir "$workspace/repository" --gnupghome "$GNUPGHOME" includedeb stable "$asset_path"
       reprepro --basedir "$workspace/repository" includedeb stable "$asset_path"
       imported=$((imported + 1))
-    done
+  done < <(gh api -H "Accept: application/vnd.github+json" "/repos/$repository_slug/releases/latest" | \
+    jq -r '.assets[] | select(.name | endswith(".deb")) | .browser_download_url')
 done
 
 if (( imported == 0 )); then
