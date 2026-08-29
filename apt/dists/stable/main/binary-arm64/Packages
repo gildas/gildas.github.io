@@ -1,19 +1,18 @@
 Package: bitbucket-cli
-Version: 0.18.4-1
+Version: 0.18.5-1
 Architecture: arm64
-License: MIT
 Maintainer: Gildas Cherruel <gildas@breizh.org>
-Installed-Size: 34725
+Installed-Size: 34742
 Replaces: bitbucket-cli
 Provides: bitbucket-cli
 Homepage: https://github.com/gildas/bitbucket-cli
 Priority: extra
 Section: default
-Filename: pool/main/b/bitbucket-cli/bitbucket-cli_0.18.4-1_arm64.deb
-Size: 17227334
-SHA256: 33607bd38b4a6fb8e8f12462ad8fba1cce52cd229f6a3e3b1ff6661a94ffae8b
-SHA1: 6793705607cb487a240eee806de31db25be5fee1
-MD5sum: 79e5e26d9e4dc4d0fe53bb9c4609aa51
+Filename: pool/main/b/bitbucket-cli/bitbucket-cli_0.18.5-1_arm64.deb
+Size: 17271576
+SHA256: 1c4aa382c71731912701ae8c9ae72dea573619c6efe87b2bc7540fbb2c8c258f
+SHA1: c608f63ecd07c626613d6477be41163f4d266e51
+MD5sum: 2f02cb8c5391995dcfaee6bce47f916c
 Description: The Bitbucket Command Line Interface brings the power of the Bitbucket
  platform to your command line. Creating and merging Pull Requests, cloning
  repositories, and more are now just a few keystrokes away.
