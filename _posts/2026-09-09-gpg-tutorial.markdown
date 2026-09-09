@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "GPG Tutorial"
+author: Gildas Cherruel
+date:   2026-09-09 11:55:00 +0900
+tags: openpgp gpg git bitbucket vscode
+---
 # GPG Tutorial: Creating, Configuring, and Managing GPG Keys
 
 This guide covers:
