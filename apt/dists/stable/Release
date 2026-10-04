@@ -2,28 +2,28 @@ Origin: gildas
 Label: gildas
 Suite: stable
 Codename: stable
-Date: Sun, 04 Oct 2026 16:40:06 UTC
+Date: Sun, 04 Oct 2026 17:16:24 UTC
 Architectures: amd64 arm64
 Components: main
 Description: gildas APT repository
 MD5Sum:
- be6a3665164b2585f674eb7060e69771 2064 main/binary-amd64/Packages
- 903bf9692e8075a11a4a6e3ab8973a5a 968 main/binary-amd64/Packages.gz
+ 023e9151d2d9c1be1696a7cff1c0b73d 2064 main/binary-amd64/Packages
+ 90f2c93034bc645cb254a3b3f3c80a92 970 main/binary-amd64/Packages.gz
  b61be22c65cb11afbe3b6d52918d7118 116 main/binary-amd64/Release
- 1490c4b19b55da893bc798252d6e5824 2064 main/binary-arm64/Packages
- 689ff4e9d12f72fc14303181ce73befb 970 main/binary-arm64/Packages.gz
+ 2fac322df799676fd2c4a2f3641bb0b2 2064 main/binary-arm64/Packages
+ 22bfe6806a8f77089cb337b6a2ebe240 974 main/binary-arm64/Packages.gz
  c7a43e459b4b379323777d1fb3bd8a75 116 main/binary-arm64/Release
 SHA1:
- 0c14db620b8244f320d1f548ab4d91d2dda3fb64 2064 main/binary-amd64/Packages
- dc56fee32e264da3aacc3fcf3240bf8de8d83a60 968 main/binary-amd64/Packages.gz
+ 73fcce143719d2050791f7718687e04238879e8e 2064 main/binary-amd64/Packages
+ 80af0cf4f9c4188871907add427b3c2f5aa0fb47 970 main/binary-amd64/Packages.gz
  79d9a55166248f783c75e0910053386dd428845c 116 main/binary-amd64/Release
- 8c22912dc1ea3e35ae65afce53473dfbe56c7b74 2064 main/binary-arm64/Packages
- 6de2ac3a68f05d0b721b856e56df201268220a64 970 main/binary-arm64/Packages.gz
+ c020d24f440f2260858851287c04db2426bb4697 2064 main/binary-arm64/Packages
+ c870ea0871054afdb2350f347a1b3ac64ae468dc 974 main/binary-arm64/Packages.gz
  00990662c14b1c733eb39a60094ffccddaaf864e 116 main/binary-arm64/Release
 SHA256:
- 183df4bd5ec94f14ae9da8e0c7fd1526f0e95f9b983cf72032867786740dfefe 2064 main/binary-amd64/Packages
- 0b3330ea55f46091df212e63ca7413a8c9eb92c1c08d5909a60a278e3f691ba7 968 main/binary-amd64/Packages.gz
+ 5da7fe3cd7ea79b5cb58dc2736031e1d19172300cde72c12699fa5f9d522e69e 2064 main/binary-amd64/Packages
+ d0f3e03a88e4d682f2925d0ab1a4789daeebcaf0c6b99f9e307877a40f5ca8fc 970 main/binary-amd64/Packages.gz
  1d38cfc6b4f0ac4013fc008ddc3c7de2e1cbeec1dcb78ce86a91a60b0f559d35 116 main/binary-amd64/Release
- 56cf0d79ce4671d496a7854a7aa6aa822a871dee8bf1228f41da995107b90ee5 2064 main/binary-arm64/Packages
- 92bfb51b86f4036bea0089c0fc027430571da5ab2998340ab6a547aa88ef4881 970 main/binary-arm64/Packages.gz
+ 6dd2404807f903e191ac08ebcda72cea4fe8befe194fb4116afcf34a6c9c3f29 2064 main/binary-arm64/Packages
+ f25d57d7bd749a50e23fec0af649618a131944be230427309931c82a1a7a4336 974 main/binary-arm64/Packages.gz
  8c257cbeb76d83e47eae8053c31f9e67e4ae5667ae6a786af4524b015f92a0b0 116 main/binary-arm64/Release
