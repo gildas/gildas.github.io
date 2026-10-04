@@ -34,3 +34,23 @@ SHA1: 37326d0e2b99b714c8a5a0fe4787fdc92d0d2151
 MD5sum: 10dbb985931db6615eab9c19c44f7e74
 Description: lv is a logviewer for bunyan and pino logger.
 
+Package: gitflow-hooks
+Version: 1.4.0-1
+Architecture: arm64
+Homepage: https://github.com/gildas/gitflow-hooks
+Maintainer: Gildas Cherruel <gildas@breizh.org>
+Installed-Size: 2324
+Depends: bash, git
+Recommends: git-flow
+Priority: optional
+Section: vcs
+Filename: pool/main/g/gitflow-hooks/gitflow-hooks_1.4.0-1_arm64.deb
+Size: 668548
+SHA256: 8d005dc4ffcf6e3e7bb5c180996302633698b5d50918291e6560fed8ef6f08a4
+SHA1: 4674d52559c37e4a3cb23d3256092faf63328cf1
+MD5sum: eb3ac1348f9caf56a0ad8e3d407a02a0
+Description: Installs git flow (AVH edition) hooks in git repositories
+ hook-it injects git flow (AVH edition) hooks in git repositories: version
+ bumping, pull requests for features, releases and hotfixes, formatting and
+ linting before commits (Go, Node.js, Salesforce).
+
