@@ -22,6 +22,7 @@ done
 echo "Building APT repository from releases" 
 REPOSITORIES=(
   $(echo '{"name":"Bitbucket CLI","slug":"gildas/bitbucket-cli","package":"bitbucket-cli"}' | jq -r --compact-output '. | @base64')
+  $(echo '{"name":"Gitflow Hooks","slug":"gildas/gitflow-hooks","package":"gitflow-hooks"}' | jq -r --compact-output '. | @base64')
   $(echo '{"name":"Logviewer","slug":"gildas/lv","package":"bunyan-logviewer"}' | jq -r --compact-output '. | @base64')
 )
 
