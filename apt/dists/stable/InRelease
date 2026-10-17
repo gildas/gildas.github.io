@@ -5,35 +5,35 @@ Origin: gildas
 Label: gildas
 Suite: stable
 Codename: stable
-Date: Sun, 04 Oct 2026 17:16:24 UTC
+Date: Sat, 17 Oct 2026 03:01:21 UTC
 Architectures: amd64 arm64
 Components: main
 Description: gildas APT repository
 MD5Sum:
- 023e9151d2d9c1be1696a7cff1c0b73d 2064 main/binary-amd64/Packages
- 90f2c93034bc645cb254a3b3f3c80a92 970 main/binary-amd64/Packages.gz
+ 102595d62ba83d6414d750041ff69a20 2064 main/binary-amd64/Packages
+ 50b43e504e68edf741501f6bbac578b9 973 main/binary-amd64/Packages.gz
  b61be22c65cb11afbe3b6d52918d7118 116 main/binary-amd64/Release
- 2fac322df799676fd2c4a2f3641bb0b2 2064 main/binary-arm64/Packages
- 22bfe6806a8f77089cb337b6a2ebe240 974 main/binary-arm64/Packages.gz
+ 37b6fe9f9c92720d39da8a507e61b6e3 2064 main/binary-arm64/Packages
+ 3a08ce8c60ff89539735ff43804633d1 975 main/binary-arm64/Packages.gz
  c7a43e459b4b379323777d1fb3bd8a75 116 main/binary-arm64/Release
 SHA1:
- 73fcce143719d2050791f7718687e04238879e8e 2064 main/binary-amd64/Packages
- 80af0cf4f9c4188871907add427b3c2f5aa0fb47 970 main/binary-amd64/Packages.gz
+ ec7257c343e10f00037613866ff67002938cf5bc 2064 main/binary-amd64/Packages
+ 729698a698317829dee540054bb53219f3ab5c2f 973 main/binary-amd64/Packages.gz
  79d9a55166248f783c75e0910053386dd428845c 116 main/binary-amd64/Release
- c020d24f440f2260858851287c04db2426bb4697 2064 main/binary-arm64/Packages
- c870ea0871054afdb2350f347a1b3ac64ae468dc 974 main/binary-arm64/Packages.gz
+ 08b4f85b46bba3bb3f8347ccf317ca9fb9a83fbe 2064 main/binary-arm64/Packages
+ 4c1f9c2d443e9c77c0c2c4b1e28c8a372371be61 975 main/binary-arm64/Packages.gz
  00990662c14b1c733eb39a60094ffccddaaf864e 116 main/binary-arm64/Release
 SHA256:
- 5da7fe3cd7ea79b5cb58dc2736031e1d19172300cde72c12699fa5f9d522e69e 2064 main/binary-amd64/Packages
- d0f3e03a88e4d682f2925d0ab1a4789daeebcaf0c6b99f9e307877a40f5ca8fc 970 main/binary-amd64/Packages.gz
+ db796f4795c13c1107cd36d86b04c5d90f0cb2016a55c1567bf7473652da522d 2064 main/binary-amd64/Packages
+ cfa34532f0967be643ef0df89d5b745fe47f1a4add87689619a7e4b4fd4b8718 973 main/binary-amd64/Packages.gz
  1d38cfc6b4f0ac4013fc008ddc3c7de2e1cbeec1dcb78ce86a91a60b0f559d35 116 main/binary-amd64/Release
- 6dd2404807f903e191ac08ebcda72cea4fe8befe194fb4116afcf34a6c9c3f29 2064 main/binary-arm64/Packages
- f25d57d7bd749a50e23fec0af649618a131944be230427309931c82a1a7a4336 974 main/binary-arm64/Packages.gz
+ 5a5b538d269d59a966f48f3ce15ec5a995383b4ad7dd5d000fb8417909e376f1 2064 main/binary-arm64/Packages
+ 21239f289c45979d8fd3ebfab93fb3b2c12ed9f4feef72b8653d16e6535a865a 975 main/binary-arm64/Packages.gz
  8c257cbeb76d83e47eae8053c31f9e67e4ae5667ae6a786af4524b015f92a0b0 116 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQQP29GNkRRfX7IUJjAAqdyOXpp+AAUCasKJ6QAKCRAAqdyOXpp+
-AAJRAQDxCd5Nu8X6mGdnWQvwUTOw8s/bUrZgd4f25sU0jmtNNAD+Ja2scx+mOhOK
-htqXX3pgriatORVydK52MwDOHvuSkAU=
-=PqsA
+iHUEARYKAB0WIQQP29GNkRRfX7IUJjAAqdyOXpp+AAUCatLlAQAKCRAAqdyOXpp+
+AOJhAQCC0UFGW70M4DwObitqtU4vIR8DzKe97yUhej9z1fosNQEAldLt2frAWU1u
+yLd7BCZZl7wumM1h9CRal7r2xuNJsws=
+=jPjs
 -----END PGP SIGNATURE-----
